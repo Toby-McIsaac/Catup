@@ -1,2 +1,2 @@
-# Catup-Frontend
+# Catup
 Scheduling/hangout tool
