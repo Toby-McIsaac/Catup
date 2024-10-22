@@ -11,5 +11,10 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "mongoose": "^8.7.2"
-  }
+  },
+  "scripts": {
+    "client": "cd client && npm run start",
+    "server": "cd server && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+}
 }

@@ -11,9 +11,4 @@
     "skipLibCheck": true
   },
   "exclude": ["node_modules", "dist", "client"],
-  "scripts": {
-    "start": "ts-node src/server.ts",
-    "build": "tsc",
-    "dev": "nodemon src/server.ts"
-  }
 }
