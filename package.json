@@ -11,7 +11,7 @@
     "mongoose": "^8.7.2"
   },
   "scripts": {
-    "client": "cd client && npm run start",
+    "client": "cd client && npm run dev",
     "server": "cd server && npm run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   }
