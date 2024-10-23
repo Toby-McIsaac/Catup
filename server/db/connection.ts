@@ -1,6 +1,12 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
+import dotenv from "dotenv";
 
-const uri = process.env.ATLAS_URI || "";
+// Load environment variables from config.env
+dotenv.config({ path: './config.env' });
+
+const uri = process.env.ATLAS_URI || "ERROR";
+console.log(uri);
+
 const client = new MongoClient(uri, {
 	serverApi: {
 		version: ServerApiVersion.v1,
@@ -25,6 +31,6 @@ async function connectToDatabase() {
 
 connectToDatabase().catch(console.error);
 
-const db = client.db("employees");
+const db = client.db();
 
 export default db;
