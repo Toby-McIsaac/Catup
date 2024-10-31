@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ImBringing from "./ImBringing";
+import ImBringing from "./ImBringingForm";
 
 const CreateImBringing: React.FC = () => {
   const [showComponent, setShowComponent] = useState(false);
