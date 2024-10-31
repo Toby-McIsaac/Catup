@@ -1,11 +1,11 @@
 import React from "react";
 
 const ImBringing: React.FC = () => {
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		const data = new FormData(e.currentTarget);
-		alert("You entered: " + JSON.stringify(Object.fromEntries(data)));
-	}
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    alert("You entered: " + JSON.stringify(Object.fromEntries(data)));
+  };
 
   return (
     <div>
