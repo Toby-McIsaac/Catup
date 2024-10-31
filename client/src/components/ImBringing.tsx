@@ -4,7 +4,7 @@ const ImBringing: React.FC = () => {
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const data = new FormData(e.currentTarget);
-		alert("You entered: " + JSON.stringify(Object.fromEntries(new FormData(e.currentTarget))));
+		alert("You entered: " + JSON.stringify(Object.fromEntries(data)));
 	}
 
   return (
