@@ -1,10 +1,10 @@
 import "./App.css";
-import CreateImBringing from "./pages/ImBringing/ImBringingButton";
+import ImBringing from "./pages/ImBringing/ImBringing";
 
 function App() {
   return (
     <>
-      <CreateImBringing />
+      <ImBringing />
     </>
   );
 }
