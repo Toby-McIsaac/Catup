@@ -42,10 +42,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 };
 
 /**
-     * Hook to access the AuthContext
-	 * @version 1.0.0
-     * @returns The AuthContext
-     */
+ * Custom hook to access the authentication context.
+ *
+ * @returns {AuthContextType} The current authentication context.
+ * @throws {Error} If the hook is used outside of an AuthProvider.
+ */
 export const useAuth = (): AuthContextType => {
   const context = useContext(AuthContext);
   if (!context) throw new Error("useAuth must be used within an AuthProvider");
