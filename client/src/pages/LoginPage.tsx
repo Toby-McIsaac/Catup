@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useAuth } from '../components/authentication/AuthContext';
 
 const LoginPage: React.FC = () => {
+	const { login } = useAuth();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
@@ -10,7 +12,14 @@ const LoginPage: React.FC = () => {
 		console.log('Email:', email);
 		console.log('Password:', password);
 
-		
+		const token = 'test-token';
+		const userInfo = {
+			id: 'test-id',
+			name: 'test-name',
+			email: email,
+		};
+
+		login( token, userInfo );
 	};
 
 	return (
