@@ -1,13 +1,15 @@
-import './App.css'
-import LoginPage from './pages/LoginPage'
+import "./App.css";
+import { AuthProvider } from "./components/authentication/AuthContext";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
-
   return (
     <>
-      <LoginPage></LoginPage>
+      <AuthProvider>
+        <LoginPage></LoginPage>
+      </AuthProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
