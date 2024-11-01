@@ -1,5 +1,5 @@
 import { ReactNode, useEffect } from 'react';
-import { useAuth } from './AuthContext';
+import { useAuth } from '../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 
 interface PrivateRouteProps {
