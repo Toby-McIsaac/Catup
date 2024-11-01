@@ -24,11 +24,13 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const login = (token: string, userInfo: User) => {
     setUser(userInfo);
+	// TODO: change to cookies
     localStorage.setItem("token", token);
   };
 
   const logout = () => {
     setUser(null);
+	// TODO: change to cookies
     localStorage.removeItem("token");
   };
 
