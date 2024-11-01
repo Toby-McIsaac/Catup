@@ -7,17 +7,18 @@ import DeleteLater from "./pages/DeleteLater";
 function App() {
   return (
     <>
-      <AuthProvider>
-        <BrowserRouter>
+      <BrowserRouter>
+        <AuthProvider>
           <nav>
-            <Link to="/login">Login</Link> | <Link to="/delete-later">Delete Later</Link>
+            <Link to="/login">Login</Link> |{" "}
+            <Link to="/delete-later">Delete Later</Link>
           </nav>
           <Routes>
-            <Route path ="/login" element={<LoginPage />} />
-            <Route path = "/delete-later" element={<DeleteLater />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/delete-later" element={<DeleteLater />} />
           </Routes>
-        </BrowserRouter>
-      </AuthProvider>
+        </AuthProvider>
+      </BrowserRouter>
     </>
   );
 }
