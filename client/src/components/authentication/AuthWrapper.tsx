@@ -6,7 +6,7 @@ interface PrivateRouteProps {
   children: ReactNode;
 }
 
-const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
+const AuthWrapper: React.FC<PrivateRouteProps> = ({ children }) => {
   const { user } = useAuth();
   const navigate = useNavigate();
 
@@ -20,4 +20,4 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
   return user ? <>{children}</> : null;
 };
 
-export default PrivateRoute;
+export default AuthWrapper;

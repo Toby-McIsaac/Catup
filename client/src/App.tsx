@@ -3,6 +3,7 @@ import { AuthProvider } from "./components/authentication/AuthContext";
 import LoginPage from "./pages/LoginPage";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import DeleteLater from "./pages/DeleteLater";
+import AuthWrapper from "./components/authentication/AuthWrapper";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           </nav>
           <Routes>
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/delete-later" element={<DeleteLater />} />
+            <Route path="/delete-later" element={<AuthWrapper><DeleteLater /></AuthWrapper>}/>
           </Routes>
         </AuthProvider>
       </BrowserRouter>
