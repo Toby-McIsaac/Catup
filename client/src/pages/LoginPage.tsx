@@ -14,9 +14,8 @@ const Login: React.FC = () => {
       name: "test-name",
       email: username,
     };
-    const token = "test-token";
 
-    login(token, userInfo);
+    await login(userInfo);
     navigate("/delete-later");
   };
 

@@ -1,6 +1,5 @@
 import React, { createContext, useState, ReactNode } from "react";
 
-// Define the structure of user data and context
 export interface User {
   id: string;
   name: string;
@@ -9,11 +8,13 @@ export interface User {
 
 export interface AuthContextType {
   user: User | null;
-  login: (token: string, userInfo: User) => void;
+  login: (userInfo: User) => void;
   logout: () => void;
 }
 
-export const AuthContext = createContext<AuthContextType | undefined>(undefined);
+export const AuthContext = createContext<AuthContextType | undefined>(
+  undefined
+);
 
 interface AuthProviderProps {
   children: ReactNode;
@@ -22,15 +23,31 @@ interface AuthProviderProps {
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
 
-  const login = (token: string, userInfo: User) => {
-    setUser(userInfo);
-	// TODO: change to cookies
-    localStorage.setItem("token", token);
+  const login = async (userInfo: User) => {
+    try {
+      const response = await fetch("http://localhost:5050/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userInfo),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Login failed: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      setUser(data);
+      // TODO: Better way to store token?
+      localStorage.setItem("token", data.token);
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
   };
 
   const logout = () => {
     setUser(null);
-	// TODO: change to cookies
     localStorage.removeItem("token");
   };
 
