@@ -16,7 +16,14 @@ function App() {
           </nav>
           <Routes>
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/delete-later" element={<AuthWrapper><DeleteLater /></AuthWrapper>}/>
+            <Route
+              path="/delete-later"
+              element={
+                <AuthWrapper>
+                  <DeleteLater />
+                </AuthWrapper>
+              }
+            />
           </Routes>
         </AuthProvider>
       </BrowserRouter>

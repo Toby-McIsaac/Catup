@@ -27,7 +27,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const checkLoggedIn = () => {
     return localStorage.getItem("token");
-  }
+  };
 
   const validateToken = () => {
     // Directly set a dummy user if the token exists
@@ -75,7 +75,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, validateToken, checkLoggedIn, login, logout }}>
+    <AuthContext.Provider
+      value={{ user, validateToken, checkLoggedIn, login, logout }}
+    >
       {children}
     </AuthContext.Provider>
   );
