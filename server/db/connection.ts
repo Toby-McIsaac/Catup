@@ -31,6 +31,6 @@ async function connectToDatabase() {
 
 connectToDatabase().catch(console.error);
 
-const db = client.db();
+const db = client.db("CATup");
 
 export default db;

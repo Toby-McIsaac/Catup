@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsx src/index.ts",
     "build": "tsc",
-    "dev": "tsx src/server.ts"
+    "dev": "nodemon --exec tsx src/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,7 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.7.8",
+    "nodemon": "^3.1.7",
     "tsx": "^4.19.1",
     "typescript": "^5.6.3"
   }

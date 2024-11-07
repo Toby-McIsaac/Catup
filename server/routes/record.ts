@@ -37,12 +37,10 @@ router.get("/:id", async (req: Request, res: Response) => {
 // This section will help you create a new record.
 router.post("/", async (req: Request, res: Response) => {
 	try {
-		const newDocument = {
-			name: req.body.name,
-			position: req.body.position,
-			level: req.body.level,
-		};
-		const collection = await db.collection("records");
+		const { name, code, tags, RSVP, bringing, carpooling, polls, notes } = req.body;
+		const newDocument = { name, code, tags, RSVP, bringing, carpooling, polls, notes };
+
+		const collection = await db.collection("Parties");
 		const result = await collection.insertOne(newDocument);
 		res.status(201).send(result);
 	} catch (err) {
@@ -63,7 +61,7 @@ router.patch("/:id", async (req: Request, res: Response) => {
 			},
 		};
 
-		const collection = await db.collection("records");
+		const collection = await db.collection("Parties");
 		const result = await collection.updateOne(query, updates);
 		res.status(200).send(result);
 	} catch (err) {
