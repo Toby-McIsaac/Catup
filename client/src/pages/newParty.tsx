@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 const CreateParty: React.FC = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -15,7 +16,7 @@ const CreateParty: React.FC = () => {
         });
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         // set random code
@@ -25,7 +26,24 @@ const CreateParty: React.FC = () => {
         });
 
         // Handle form submission logic here
-        
+        try {
+            const response = await fetch("http://localhost:5050/record", {
+                method: "POST",
+                headers: {
+                 "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log("Record added successfully:", result);
+            } else {
+                console.error("Failed to add record:", response.statusText);
+            }
+        } catch (error) {
+            console.error("Error submitting form data:", error);
+        }
 
         console.log(formData);
     };
