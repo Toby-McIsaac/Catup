@@ -7,7 +7,11 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use("/record", records);
+app.use("/login", (req, res) => {
+  res.send({
+    token: "test12321",
+  });
+});
 
 // start the Express server
 app.listen(PORT, () => {
