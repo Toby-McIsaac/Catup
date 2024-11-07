@@ -4,6 +4,7 @@ import LoginPage from "./pages/LoginPage";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import DeleteLater from "./pages/DeleteLater";
 import AuthWrapper from "./components/authentication/AuthWrapper";
+import ImBringing from "./pages/ImBringing/ImBringing";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <AuthProvider>
           <nav>
             <Link to="/login">Login</Link> |{" "}
+            <Link to="/im-bringing">I'm Bringing</Link> |{" "}
             <Link to="/delete-later">Delete Later</Link>
           </nav>
           <Routes>
@@ -21,6 +23,14 @@ function App() {
               element={
                 <AuthWrapper>
                   <DeleteLater />
+                </AuthWrapper>
+              }
+            />
+            <Route
+              path="/im-bringing"
+              element={
+                <AuthWrapper>
+                  <ImBringing />
                 </AuthWrapper>
               }
             />
