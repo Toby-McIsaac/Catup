@@ -14,8 +14,8 @@ function App() {
       <BrowserRouter>
         <AuthProvider>
           <nav>
-            <Link to="/">Home</Link>
-            <Link to="/newParty">New Party</Link>
+            <Link to="/">Home</Link> |{" "}
+            <Link to="/newParty">New Party</Link> |{" "}
             <Link to="/login">Login</Link> |{" "}
             <Link to="/im-bringing">I'm Bringing</Link> |{" "}
             <Link to="/delete-later">Delete Later</Link>
