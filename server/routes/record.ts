@@ -37,8 +37,8 @@ router.get("/:id", async (req: Request, res: Response) => {
 // This section will help you create a new record.
 router.post("/", async (req: Request, res: Response) => {
 	try {
-		const { name, code, tags } = req.body;
-		const newDocument = { name, code, tags };
+		const { name, code, tags, RSVP, bringing, carpooling, polls, notes } = req.body;
+		const newDocument = { name, code, tags, RSVP, bringing, carpooling, polls, notes };
 
 		const collection = await db.collection("Parties");
 		const result = await collection.insertOne(newDocument);
