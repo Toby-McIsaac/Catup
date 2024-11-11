@@ -12,6 +12,7 @@ app.use("/login", (req, res) => {
     token: "test12321",
   });
 });
+app.use("/record", records);
 
 // start the Express server
 app.listen(PORT, () => {
