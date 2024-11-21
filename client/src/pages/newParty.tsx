@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const CreateParty: React.FC = () => {
     const [formData, setFormData] = useState({
         name: '',
-        code: '',
+        code: Math.random().toString(36).substring(7),
         tags: '',
     });
 
